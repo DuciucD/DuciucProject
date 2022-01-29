@@ -32,6 +32,7 @@ namespace DuciucProject.Pages.Projects
         {
             if (!ModelState.IsValid)
             {
+                ViewData["User"] = new SelectList(_context.Users, "Id", "FullName");
                 return Page();
             }
 

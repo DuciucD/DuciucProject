@@ -1,4 +1,5 @@
 using DuciucProject.Models;
+using DuciucProject.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,8 @@ namespace DuciucProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews(opt => opt.ModelValidatorProviders.Add(new CustomModelValidatorProvider()));
+
             services.AddRazorPages();
 
             services.AddDbContext<ProjectDbContext>(options =>

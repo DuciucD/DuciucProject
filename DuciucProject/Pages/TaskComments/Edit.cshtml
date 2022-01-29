@@ -1,0 +1,40 @@
+﻿@page
+@model DuciucProject.Pages.TaskComments.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TaskComment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaskComment.Id" />
+            <div class="form-group">
+                <label asp-for="TaskComment.Comment" class="control-label"></label>
+                <input asp-for="TaskComment.Comment" class="form-control" />
+                <span asp-validation-for="TaskComment.Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskComment.Item" class="control-label"></label>
+                <select asp-for="TaskComment.ItemId" class="form-control" asp-items="ViewBag.Item"></select>
+                <span asp-validation-for="TaskComment.ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index"><i class="fs-32 bi bi-arrow-return-left .text-secondary"></i></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

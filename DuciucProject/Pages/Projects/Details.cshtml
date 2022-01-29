@@ -43,7 +43,11 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Project.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+<div class="row">
+    <div class="col-2">
+        <a asp-page="./Edit" asp-route-id="@Model.Project.Id"><i class="fs-32 bi bi-pencil-fill text-primary"></i></a>
+    </div>
+    <div>
+        <a asp-page="./Index"><i class="fs-32 bi bi-arrow-return-left .text-secondary"></i></a>
+    </div>
 </div>

@@ -1,0 +1,56 @@
+﻿@page
+@model DuciucProject.Pages.TaskComments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Comments</h1>
+
+<p>
+    <a asp-page="Create"><i class="bi bi-plus-circle"></i> New comment </a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskComment[0].Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskComment[0].AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskComment[0].UpdatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskComment[0].Item)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TaskComment)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Name)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id"> <i class="bi bi-pencil-fill text-success"></i> </a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id"><i class="bi bi-info-circle-fill text-info"></i></a> 
+                    <a asp-page="./Delete" asp-route-id="@item.Id"><i class="bi bi-trash-fill text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

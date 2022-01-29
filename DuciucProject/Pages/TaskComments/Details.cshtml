@@ -1,0 +1,47 @@
+﻿@page
+@model DuciucProject.Pages.TaskComments.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TaskComment</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskComment.Comment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskComment.Comment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskComment.AddedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskComment.AddedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskComment.UpdatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskComment.UpdatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskComment.Item)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskComment.Item.Name)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-2">
+        <a asp-page="./Edit" asp-route-id="@Model.TaskComment.Id"><i class="fs-32 bi bi-pencil-fill text-primary"></i></a>
+    </div>
+    <div>
+        <a asp-page="./Index"><i class="fs-32 bi bi-arrow-return-left .text-secondary"></i></a>
+    </div>
+</div>

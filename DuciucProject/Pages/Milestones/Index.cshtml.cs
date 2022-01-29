@@ -22,11 +22,6 @@ namespace DuciucProject.Pages.Milestones
 
         public async Task OnGetAsync()
         {
-
-            var a= await _context.Milestones
-                .Include(m => m.Project)
-                .ToListAsync();
-
             Milestone = await _context.Milestones
                 .Include(m => m.Project)
                 .ToListAsync();
